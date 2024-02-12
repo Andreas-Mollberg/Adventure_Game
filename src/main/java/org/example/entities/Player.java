@@ -93,4 +93,15 @@ public class Player {
         }
     }
 
+    public void displayInventory() {
+        System.out.println("Displaying inventory...");
+        if (inventory.getItems().isEmpty()) {
+            System.out.println("Inventory is empty.");
+        } else {
+            System.out.println("Inventory:");
+            for (Item item : inventory.getItems()) {
+                System.out.println(item.getName());
+            }
+        }
     }
+}

@@ -1,5 +1,6 @@
 package org.example.maps;
 
+import org.example.entities.Store;
 import org.example.gameObjects.*;
 
 public class townOfBeginningsMap {
@@ -24,6 +25,9 @@ public class townOfBeginningsMap {
     Room x11y18 = new Room();
 
     private Room StartingRoom = x4y22;
+
+    Store mapShop = new Store();
+    Store weaponShop = new Store();
 
     public townOfBeginningsMap() {
         initializeRooms();
@@ -180,6 +184,7 @@ public class townOfBeginningsMap {
                 The shopkeeper greets you as you enter.
                 """);
         x6y18.setNorth(x6y17);
+        x6y18.setStore(mapShop);
 
 
         x9y18.setName("Merchant's House");

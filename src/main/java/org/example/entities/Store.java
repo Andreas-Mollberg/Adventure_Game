@@ -41,4 +41,17 @@ public class Store {
         }
         return toRemove;
     }
+
+    public void displayInventory() {
+        System.out.println("Wares in stock:");
+        if (inventory.isEmpty()) {
+            System.out.println("There are currently no items in stock.");
+        } else {
+            for (Item item : inventory) {
+                System.out.println(item.getName() + " - " + item.getDescription());
+            }
+        }
+    }
+
+
 }

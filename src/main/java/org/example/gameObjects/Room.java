@@ -1,11 +1,14 @@
 package org.example.gameObjects;
 
+import org.example.entities.Store;
+
 public class Room {
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_YELLOW = "\u001B[33m";
     private String name, description;
     private Room north, south, east, west;
+    private Store store;
 
     public Room() {
     }
@@ -90,5 +93,21 @@ public class Room {
             exits.append(ANSI_YELLOW + "w" + ANSI_RESET + "est ");
         }
         return exits.toString();
+    }
+
+    public Store getStore() {
+        return store;
+    }
+
+    public void setStore(Store store) {
+        this.store = store;
+    }
+
+    public void displayStoreInventory() {
+        if (store != null) {
+            store.displayInventory();
+        } else {
+            System.out.println("There is no store in this room.");
+        }
     }
 }

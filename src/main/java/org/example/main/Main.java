@@ -29,16 +29,10 @@ public class Main {
 
         player.setCurrentRoom(map.getStartingRoom());
 
-        Store store = new Store();
+        System.out.println("Welcome to the game!");
+        System.out.println("You are currently in " + player.getCurrentRoom().getName());
 
-        store.addArmorToInventory("Chainmail", "A sturdy chainmail", 20);
-        store.addWeaponToInventory("Longsword", "A long and sharp blade", 10, 1);
 
-        player.buyItem(store, "Chainmail");
-        player.buyItem(store, "Longsword");
-
-        player.equipItemByName("Chainmail");
-        player.equipItemByName("Longsword");
     }
 
     private static void gameLoop() throws IOException {
@@ -65,6 +59,18 @@ public class Main {
             case "eq":
             case "equipment":
                 player.displayEquippedItems();
+                break;
+            case "i":
+            case "inventory":
+                player.displayInventory();
+                break;
+            case "list":
+                if (player.getCurrentRoom().getStore() != null) {
+                    System.out.println("You are in the store.");
+                    player.getCurrentRoom().getStore().displayInventory();
+                } else {
+                    System.out.println("There is no store in this room.");
+                }
                 break;
             default:
                 System.out.println(ANSI_RED + "Invalid input." + ANSI_RESET);
@@ -94,7 +100,7 @@ public class Main {
                 nextRoom = player.getCurrentRoom().getWest();
                 break;
             default:
-                System.out.println(ANSI_RED + "Invalid direction." + ANSI_RESET + " Please enter " +  ANSI_YELLOW  + "n" +
+                System.out.println(ANSI_RED + "Invalid direction." + ANSI_RESET + " Please enter " + ANSI_YELLOW + "n" +
                         ANSI_RESET + "orth," + ANSI_YELLOW + "s" + ANSI_RESET + "outh," + ANSI_YELLOW + "e" +
                         ANSI_RESET + "ast," + "or " + ANSI_YELLOW + "w" + ANSI_RESET + "est.");
                 return;

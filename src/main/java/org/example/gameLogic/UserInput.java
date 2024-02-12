@@ -54,7 +54,7 @@ public static void Start() throws IOException {
         String action = wordList.get(0);
         String object = wordList.get(1);
 
-        List<String> actions = new ArrayList<>(Arrays.asList("take", "drop"));
+        List<String> actions = new ArrayList<>(Arrays.asList("take", "drop", "list", "equip", "unequip", "look"));
         List<String> objects = new ArrayList<>(Arrays.asList("ring", "sword", "shield"));
 
         if (wordList.size() != 2) {
