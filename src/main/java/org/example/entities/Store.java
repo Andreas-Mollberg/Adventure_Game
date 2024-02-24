@@ -8,6 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Store {
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_BRIGHT_YELLOW = "\u001B[93m";
+    public static final String ANSI_DARK_GREY = "\u001B[90m";
+    public static final String ANSI_BRIGHT_BLUE = "\u001B[94m";
     private List<Item> inventory;
     private WeaponFactory weaponFactory;
     private ArmorFactory armorFactory;
@@ -18,8 +22,8 @@ public class Store {
         armorFactory = new ArmorFactory();
     }
 
-    public void addWeaponToInventory(String name, String description, int damage, int slot) {
-        Weapon weapon = weaponFactory.createWeapon(name, description, damage);
+    public void addWeaponToInventory(String name, String description, int cost, int damage) {
+        Weapon weapon = weaponFactory.createWeapon(name, description, cost, damage);
         inventory.add(weapon);
     }
 
@@ -47,11 +51,11 @@ public class Store {
         if (inventory.isEmpty()) {
             System.out.println("There are currently no items in stock.");
         } else {
+            System.out.printf(ANSI_DARK_GREY + "|" + ANSI_BRIGHT_YELLOW + "%-20s" + ANSI_DARK_GREY + "|" + ANSI_BRIGHT_BLUE + "%-15s" + ANSI_DARK_GREY + "|" + ANSI_RESET + "%n", "Item", "Price");
             for (Item item : inventory) {
-                System.out.println(item.getName() + " - " + item.getDescription());
+                System.out.printf(ANSI_DARK_GREY + "|" + ANSI_BRIGHT_BLUE + "%-20s" + ANSI_DARK_GREY + "|" + ANSI_BRIGHT_YELLOW + "%-15d" + ANSI_DARK_GREY + "|" + ANSI_RESET + "%n", item.getName(), item.getCost());
             }
         }
     }
-
 
 }

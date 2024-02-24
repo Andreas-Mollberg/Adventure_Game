@@ -7,22 +7,25 @@ public class Item {
     private String name;
     private String description;
     private int slot;
+    private int cost;
 
-    public Item(String name, int slot) {
+    public Item(String name, int slot, int cost) {
         if (name == null || slot < 1 || slot > 2) {
             throw new IllegalArgumentException("Name cannot be null and slot must be 1 or 2");
         }
         this.name = name;
         this.slot = slot;
+        this.cost = cost;
     }
 
-    public Item(String name, String description, int slot) {
+    public Item(String name, String description, int slot, int cost) {
         if (name == null || description == null || slot < 1 || slot > 2) {
             throw new IllegalArgumentException("Name, description cannot be null and slot must be 1 or 2");
         }
         this.name = name;
         this.description = description;
         this.slot = slot;
+        this.cost = cost;
     }
 
     public String getName() {
@@ -47,6 +50,14 @@ public class Item {
 
     public void setSlot(int slot) {
         this.slot = slot;
+    }
+
+    public int getCost() {
+        return cost;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
     }
 
     public String getSlotName() {

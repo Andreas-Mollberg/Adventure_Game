@@ -1,37 +1,52 @@
 package org.example.maps;
 
 import org.example.entities.Store;
+import org.example.entities.Weapon;
 import org.example.gameObjects.*;
 
 public class townOfBeginningsMap {
 
-    Room x4y22 = new Room();
-    Room x4y21 = new Room();
-    Room x4y20 = new Room();
-    Room x4y19 = new Room();
-    Room x4y18 = new Room();
-    Room x4y17 = new Room();
-    Room x5y17 = new Room();
-    Room x6y17 = new Room();
-    Room x7y17 = new Room();
-    Room x8y17 = new Room();
-    Room x9y17 = new Room();
+    Room x04y22 = new Room();
+    Room x04y21 = new Room();
+    Room x04y20 = new Room();
+    Room x04y19 = new Room();
+    Room x04y18 = new Room();
+    Room x04y17 = new Room();
+    Room x05y17 = new Room();
+    Room x06y17 = new Room();
+    Room x07y17 = new Room();
+    Room x08y17 = new Room();
+    Room x09y17 = new Room();
     Room x10y17 = new Room();
     Room x11y17 = new Room();
     Room x12y17 = new Room();
     Room x13y17 = new Room();
-    Room x6y18 = new Room();
-    Room x9y18 = new Room();
+    Room x06y18 = new Room();
+    Room x09y18 = new Room();
     Room x11y18 = new Room();
+    Room x13y18 = new Room();
+    Room x13y19 = new Room();
+    Room x13y20 = new Room();
+    Room x13y21 = new Room();
+    Room x13y22 = new Room();
+    Room x05y22 = new Room();
+    Room x06y22 = new Room();
+    Room x07y22 = new Room();
+    Room x08y22 = new Room();
+    Room x09y22 = new Room();
+    Room x10y22 = new Room();
+    Room x11y22 = new Room();
+    Room x12y22 = new Room();
+    Room x05y21 = new Room();
 
-    private Room StartingRoom = x4y22;
+    private Room StartingRoom = x04y22;
 
     Store mapShop = new Store();
     Store weaponShop = new Store();
 
     public townOfBeginningsMap() {
         initializeRooms();
-        this.setStartingRoom(x4y22);
+        this.setStartingRoom(x04y22);
     }
 
     public Room getStartingRoom() {
@@ -39,118 +54,124 @@ public class townOfBeginningsMap {
     }
 
     public void setStartingRoom(Room startingRoom) {
-        StartingRoom = x4y22;
+        StartingRoom = x04y22;
     }
 
     private void initializeRooms() {
+        weaponShop.addWeaponToInventory("Damaged Sword", "A rusty sword that has seen better days.", 5, 10);
+        weaponShop.addWeaponToInventory("Rusty Dagger", "A small, rusty dagger.", 3, 5);
+        weaponShop.addWeaponToInventory("Wooden Staff", "A simple wooden staff.", 4, 7);
+        weaponShop.addWeaponToInventory("Training Bow", "A simple bow for training.", 5, 8);
 
-        x4y22.setName("Western entrance of the town of beginnings");
-        x4y22.setDescription("""
+
+        x04y22.setName("Western entrance of the town of beginnings");
+        x04y22.setDescription("""
                                 
                 The town is bustling with people and the sound of the blacksmith's hammer can be heard in the distance.
                 To the east is the main street with shops lining both sides.
                 To the west is the road that leads to the nearby forest.
                 North and south the street continues along the city wall.
                 """);
-        x4y22.setNorth(x4y21);
+        x04y22.setNorth(x04y21);
+        x04y22.setEast(x05y22);
 
-        x4y21.setName("Along the city wall.");
-        x4y21.setDescription("""
+        x04y21.setName("Along the city wall.");
+        x04y21.setDescription("""
                                 
                 The wall continues to the north.
                 To the east is the side of a building
                 and to the south is the western gate of the town.
                 """);
-        x4y21.setSouth(x4y22);
-        x4y21.setNorth(x4y20);
+        x04y21.setSouth(x04y22);
+        x04y21.setNorth(x04y20);
 
-        x4y20.setName("Along the city wall.");
-        x4y20.setDescription("""
+        x04y20.setName("Along the city wall.");
+        x04y20.setDescription("""
                                 
                 To the far north you can see where the northern and western
                 parts of the city wall meet.
                 To the east is the side of a building
                 and further to the south you can see the city gate.
                 """);
-        x4y20.setSouth(x4y21);
-        x4y20.setNorth(x4y19);
+        x04y20.setSouth(x04y21);
+        x04y20.setNorth(x04y19);
 
-        x4y19.setName("Along the city wall.");
-        x4y19.setDescription("""
+        x04y19.setName("Along the city wall.");
+        x04y19.setDescription("""
                                 
                 Up ahead you can see where the northern and western parts of the city wall meet.
                 To the east is the side of a building
                 and far to the south you can see the city gate.\s""");
-        x4y19.setSouth(x4y20);
-        x4y19.setNorth(x4y18);
+        x04y19.setSouth(x04y20);
+        x04y19.setNorth(x04y18);
 
-        x4y18.setName("Along the city wall.");
-        x4y18.setDescription("""
+        x04y18.setName("Along the city wall.");
+        x04y18.setDescription("""
                                 
                 Just north you can see where the northern and western
                 parts of the city wall meet.
                 To the east is the side of the map shop
                 and the wall continues to the south.\s""");
-        x4y18.setSouth(x4y19);
-        x4y18.setNorth(x4y17);
+        x04y18.setSouth(x04y19);
+        x04y18.setNorth(x04y17);
 
-        x4y17.setName("North-western corner of the town.");
-        x4y17.setDescription("""
+        x04y17.setName("North-western corner of the town.");
+        x04y17.setDescription("""
                                 
                 The road continues to the east and south.
                 """);
-        x4y17.setSouth(x4y18);
-        x4y17.setEast(x5y17);
+        x04y17.setSouth(x04y18);
+        x04y17.setEast(x05y17);
 
-        x5y17.setName("Along the northern city wall.");
-        x5y17.setDescription("""
+        x05y17.setName("Along the northern city wall.");
+        x05y17.setDescription("""
                                 
                 To the west is the north-western corner of the town.
                 To the east a bustling street follows the wall with shops and houses along the south side.
                 """);
-        x5y17.setWest(x4y17);
-        x5y17.setEast(x6y17);
+        x05y17.setWest(x04y17);
+        x05y17.setEast(x06y17);
 
-        x6y17.setName("Along the northern city wall.");
-        x6y17.setDescription("""
+        x06y17.setName("Along the northern city wall.");
+        x06y17.setDescription("""
                                 
                 To the west is the north-western corner of the town.
                 """);
-        x6y17.setWest(x5y17);
-        x6y17.setEast(x7y17);
-        x6y17.setSouth(x6y18);
+        x06y17.setWest(x05y17);
+        x06y17.setEast(x07y17);
+        x06y17.setSouth(x06y18);
 
-        x7y17.setName("Along the northern city wall.");
-        x7y17.setDescription("""
+        x07y17.setName("Along the northern city wall.");
+        x07y17.setDescription("""
                                 
                 To the south you can see a shop that sells maps.
                 """);
-        x7y17.setWest(x6y17);
-        x7y17.setEast(x8y17);
+        x07y17.setWest(x06y17);
+        x07y17.setEast(x08y17);
 
-        x8y17.setName("Along the northern city wall.");
-        x8y17.setDescription("""
+        x08y17.setName("Along the northern city wall.");
+        x08y17.setDescription("""
                                 
                 People are walking past you, going about their business.
                 """);
-        x8y17.setWest(x7y17);
-        x8y17.setEast(x9y17);
+        x08y17.setWest(x07y17);
+        x08y17.setEast(x09y17);
 
-        x9y17.setName("Along the northern city wall.");
-        x9y17.setDescription("""
+        x09y17.setName("Along the northern city wall.");
+        x09y17.setDescription("""
                                 
                 A large house is to the south.
                 """);
-        x9y17.setWest(x8y17);
-        x9y17.setEast(x10y17);
-        x9y17.setSouth(x9y18);
+        x09y17.setWest(x08y17);
+        x09y17.setEast(x10y17);
+        x09y17.setSouth(x09y18);
 
         x10y17.setName("Along the northern city wall.");
         x10y17.setDescription("""
                                 
                 You can smell the food cooking in the nearby homes
                 """);
-        x10y17.setWest(x9y17);
+        x10y17.setWest(x09y17);
         x10y17.setEast(x11y17);
 
         x11y17.setName("Along the northern city wall.");
@@ -178,31 +199,100 @@ public class townOfBeginningsMap {
         x13y17.setWest(x12y17);
 
 
-        x6y18.setName("Map Shop");
-        x6y18.setDescription("""
+        x06y18.setName("Map Shop");
+        x06y18.setDescription("""
                 There are various maps of the town and surrounding areas on display.
                 The shopkeeper greets you as you enter.
                 """);
-        x6y18.setNorth(x6y17);
-        x6y18.setStore(mapShop);
+        x06y18.setNorth(x06y17);
+        x06y18.setStore(mapShop);
 
 
-        x9y18.setName("Merchant's House");
-        x9y18.setDescription("""
+        x09y18.setName("Merchant's House");
+        x09y18.setDescription("""
                 .
                 It's cozy and well-kept.
                 The residents greet you warmly.
                 """);
-        x9y18.setNorth(x9y17);
+        x09y18.setNorth(x09y17);
 
 
         x11y18.setName("Noble's House");
         x11y18.setDescription("""
-                
+                                
                 It's spacious and well-furnished.
                 The residents seem friendly.
                 """);
         x11y18.setNorth(x11y17);
+
+        x13y18.setName("Room x17y18");
+        x13y18.setDescription("This is a quiet room with a view of the town square.");
+        x13y18.setNorth(x13y17);
+        x13y18.setSouth(x13y19);
+
+        x13y19.setName("Room x17y19");
+        x13y19.setDescription("This room is bustling with activity, as it's near the market.");
+        x13y19.setNorth(x13y18);
+        x13y19.setSouth(x13y20);
+
+        x13y20.setName("Room x17y20");
+        x13y20.setDescription("This room is peaceful and serene, perfect for rest.");
+        x13y20.setNorth(x13y19);
+        x13y20.setSouth(x13y21);
+
+        x13y21.setName("Room x17y21");
+        x13y21.setDescription("This room is filled with the sound of the nearby river.");
+        x13y21.setNorth(x13y20);
+        x13y21.setSouth(x13y22);
+
+        x13y22.setName("Room x17y22");
+        x13y22.setDescription("This room is at the top of a tower, offering a panoramic view of the town.");
+        x13y22.setNorth(x13y21);
+        x13y22.setWest(x12y22);
+
+        x05y22.setName("Room x05y22");
+        x05y22.setDescription("This room is filled with the aroma of fresh baked goods from the nearby bakery.");
+        x05y22.setEast(x06y22);
+
+        x06y22.setName("Room x06y22");
+        x06y22.setDescription("This room is bustling with activity, as it's near the town's main square.");
+        x06y22.setWest(x05y22);
+        x06y22.setEast(x07y22);
+
+        x07y22.setName("Room x07y22");
+        x07y22.setDescription("This room is quiet and serene, perfect for a moment of rest.");
+        x07y22.setWest(x06y22);
+        x07y22.setEast(x08y22);
+
+        x08y22.setName("Room x08y22");
+        x08y22.setDescription("This room is filled with the sound of the nearby river.");
+        x08y22.setWest(x07y22);
+        x08y22.setEast(x09y22);
+
+        x09y22.setName("Room x09y22");
+        x09y22.setDescription("This room is at the edge of the town, offering a panoramic view of the surrounding countryside.");
+        x09y22.setWest(x08y22);
+        x09y22.setEast(x10y22);
+
+        x10y22.setName("Room x10y22");
+        x10y22.setDescription("This room is filled with the chatter of townsfolk discussing the day's events.");
+        x10y22.setWest(x09y22);
+        x10y22.setEast(x11y22);
+
+        x11y22.setName("Room x11y22");
+        x11y22.setDescription("This room is filled with the sound of children playing in the nearby park.");
+        x11y22.setWest(x10y22);
+        x11y22.setEast(x12y22);
+
+        x12y22.setName("Room x12y22");
+        x12y22.setDescription("This room is quiet, with a view of the town's beautiful gardens.");
+        x12y22.setWest(x11y22);
+        x12y22.setEast(x13y22);
+
+        x05y21.setName("Room x05y21");
+        x05y21.setDescription("You're inside the weapon shop.");
+        x05y21.setSouth(x05y22);
+        x05y21.setStore(weaponShop);
 
     }
 
