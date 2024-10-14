@@ -1,7 +1,6 @@
 package org.example.maps;
 
 import org.example.entities.Store;
-import org.example.entities.Weapon;
 import org.example.gameObjects.*;
 
 public class townOfBeginningsMap {
